@@ -2,13 +2,14 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchRecipes } from '../actions'
+import { fetchRecipe } from '../actions'
 
 class SingleRecipe extends Component{
 
     
     componentDidMount(){
-        this.props.fetchRecipes();
+        const { id } = this.props.match.params;
+        this.props.fetchRecipe(id);
     }
 
     render(){
@@ -16,14 +17,14 @@ class SingleRecipe extends Component{
         return(
             <div>
                 Single Recipe
-                {this.recipes}
+                {this.recipe}
             </div>
         );
     }
 }
 
 function mapStateToProps(state){
-    return {recipes: state.recipes};
+    return {recipe: state.recipe};
 }
 
-export default connect(mapStateToProps, { fetchRecipes })(SingleRecipe);
+export default connect(mapStateToProps, { fetchRecipe })(SingleRecipe);

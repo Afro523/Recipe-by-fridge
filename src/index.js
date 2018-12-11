@@ -16,7 +16,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/" component={SingleRecipe}  />
+          <Route path="/recipes/:id" component={SingleRecipe}  />
         </Switch>
       </div>
     </BrowserRouter>
