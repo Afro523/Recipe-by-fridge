@@ -16,7 +16,6 @@ export function fetchRecipes() {
 
 export function fetchRecipe(id){
     const request = axios.get(`${ROOT_URL}recipes/${id}`);
-    console.log(request)
     return {
         type: FETCH_RECIPE,
         payload: request

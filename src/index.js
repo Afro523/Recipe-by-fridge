@@ -7,7 +7,7 @@ import promise from 'redux-promise';
 
 
 import reducers from './reducers';
-import SingleRecipe from './components/single_recipe';
+import SingleRecipe from './components/single_recipe_component/single_recipe_container';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
